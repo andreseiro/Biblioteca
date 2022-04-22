@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="563.0" prefWidth="812.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.BibliotecaController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+            <Menu mnemonicParsing="false" text="Archivo">
+              <items>
+                <MenuItem fx:id="btnCargarDatos" mnemonicParsing="false" onAction="#cargarDatos" text="Cargar Datos" />
+                  <MenuItem fx:id="btnGuardar" mnemonicParsing="false" onAction="#guardar" text="Guardar" />
+                  <MenuItem fx:id="btnSalir" mnemonicParsing="false" onAction="#salir" text="Salir" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Datos">
+              <items>
+              <MenuItem fx:id="btnAgregarAutor" mnemonicParsing="false" onAction="#agregarAutor" text="Agregar Autor" />
+                <MenuItem fx:id="btnAgregarLibro" mnemonicParsing="false" onAction="#agregarLibro" text="Agregar Libro" />
+                  <MenuItem mnemonicParsing="false" text="Agregar Copia" />
+              </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Ayuda">
+            <items>
+              <MenuItem id="btnAcercaDe" fx:id="btnAcercaDe" mnemonicParsing="false" onAction="#mostrarAcercaDe" text="Acerca de" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="AUTORES" />
+            <TableView fx:id="tblAutores" editable="true" prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn fx:id="colNombreAutor" editable="false" prefWidth="263.0" text="Nombre" />
+                <TableColumn fx:id="colNacionalidadAutor" editable="false" prefWidth="263.0" text="Nacionalidad" />
+                  <TableColumn fx:id="colFechaNacimientoAutor" editable="false" prefWidth="263.0" text="Fecha Nacimiento" />
+              </columns>
+            </TableView>
+            <Label text="LIBROS">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Label>
+            <TableView prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn prefWidth="198.0" text="Nombre" />
+                <TableColumn prefWidth="198.0" text="Tipo" />
+                  <TableColumn prefWidth="198.0" text="Editorial" />
+                  <TableColumn prefWidth="198.0" text="Autor" />
+              </columns>
+            </TableView>
+            <Label text="COPIAS">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Label>
+            <TableView prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn prefWidth="396.0" text="Id" />
+                <TableColumn prefWidth="396.0" text="Estado" />
+              </columns>
+            </TableView>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+      </VBox>
+   </center>
+</BorderPane>
